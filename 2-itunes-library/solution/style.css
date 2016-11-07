@@ -1,0 +1,117 @@
+body {
+  background: #f5f5f5;
+}
+
+
+.card-container-outer {
+  margin: 50px auto;
+  width: 90%;
+  max-width: 740px;
+  height: 300px;
+  
+
+  display: flex;
+  overflow: hidden;
+  background: #fff;
+}
+
+.card-container-inner {
+
+  min-width: 200%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  overflow: hidden;
+  position: relative;
+
+  transform: none;
+
+  transition: transform 0.5s;
+
+}
+
+
+
+
+.card {
+
+  z-index: 1;
+  flex-shrink: 1;
+
+  outline: none;
+  height: 150px;
+  width: 150px;
+  margin-left: -40px; /* Stacks the cards on top of each other */
+  margin-right: -40px; /* Stacks the cards on top of each other */
+  
+  transform: rotateY(60deg) skewY(-5deg) scale(0.8);
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.3);
+  filter: blur(2px);
+  opacity: 1;
+
+  transition: transform 1s, 
+              margin-left 1s, 
+              margin-right 1s, 
+              box-shadow 1s, 
+              filter 1s, 
+              opacity 0.6s, 
+              flex-shrink 1s,
+              z-index 1s;
+}
+
+
+.card.js-active,
+.card:active,
+.card:focus {
+  transform: none;
+  margin-left: 40px;
+  margin-right: 40px;
+  box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.3);
+  filter: none;
+  flex-shrink: 0;
+
+  z-index: 2;
+}
+
+.card:hover:not(:active):not(:focus):not(.active) {
+  margin-left: -20px;
+  margin-right: -20px;
+  box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.3);
+  filter: none;
+  cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 600px) {
+  .card {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-right: -80px;
+  }
+
+  .card.active,
+  .card:active,
+  .card:focus {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+
+
+.card img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+

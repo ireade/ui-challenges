@@ -1,0 +1,67 @@
+/* RESETTING */
+
+html { box-sizing: border-box; font-size: 62.5%;  }
+*, *:before, *:after { box-sizing: inherit; }
+body { font-size: 1.6rem; font-weight: 300; line-height: 1.6; font-family: 'Open Sans', sans-serif; }
+h1 { font-size: 2rem; }
+a { color: inherit; }
+
+
+/* LAYOUT */
+
+.container { width: 90%; max-width: 500px; margin: 100px auto; }
+
+/* CLEAR ELEMENT */
+.clear { margin: 30px 0; }
+
+.list-header { display: flex; align-items: center; background-color: #e0dee0; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 10px 20px; }
+
+.list-header div { width: 20%; }
+
+.list-header .circles div { height: 15px; width: 15px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+
+.list-header .circles div:nth-child(1) { background-color: #fc615d; }
+
+.list-header .circles div:nth-child(2) { background-color: #fec342; }
+
+.list-header .circles div:nth-child(3) { background-color: #34c749; }
+
+.list-header .menu { display: flex; align-items: flex-end; flex-direction: column; }
+
+.list-header .menu div { width: 25px; height: 3px; background-color: #a9a9a9; border-radius: 3px; }
+
+.list-header .menu div:nth-child(2) { margin: 4px 0; }
+
+.list-header h1 { width: 60%; text-align: center; }
+
+/* Task List */
+.task-list { background-color: #272822; min-height: 400px; overflow: hidden; }
+
+/* Individual Task */
+.task { color: #fff; width: 100%; height: auto; min-height: 50px; line-height: 2; position: relative; padding: 8px 20px; height: auto; transition: background-color 1s; }
+
+.task:before, .task:after { position: absolute; top: 0; width: 40px; height: 50px; line-height: 50px; text-align: center; }
+
+.task:before { content: "\2714"; left: -40px; }
+
+.task:after { content: "\2718"; right: -40px; }
+
+.task:not(.completed):not(.completing) { border-bottom: 2px solid #d44a29; }
+
+.task:nth-child(1) { background-color: #e3252c; }
+
+.task:nth-child(2) { background-color: #dc342a; }
+
+.task:nth-child(3) { background-color: #e7522e; }
+
+.task:nth-child(4) { background-color: #e86d2f; }
+
+.task:nth-child(5) { background-color: #e86d2f; }
+
+.task.completing { text-decoration: line-through; background-color: green; }
+
+.task.completed { opacity: 0.5; text-decoration: line-through; background-color: #323232; }
+
+.task.completed:before { content: ""; }
+
+.task.deleting { background-color: #323232; }
